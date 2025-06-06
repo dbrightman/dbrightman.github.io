@@ -74,6 +74,31 @@
       border-radius: 8px;
     }
 
+    .subsection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .subsection-box {
+      border: 1px solid var(--gray);
+      border-left: 5px solid var(--teal);
+      border-radius: 8px;
+      padding: 1rem;
+      background: #f9f9f9;
+      transition: box-shadow 0.3s;
+    }
+
+    .subsection-box:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .subsection-box h3 {
+      margin-top: 0;
+      color: var(--blue);
+    }
+
     footer {
       background: var(--blue);
       color: var(--white);
@@ -97,12 +122,42 @@
 
   <section id="services">
     <h2 class="section-title">Services</h2>
-    <p style="text-align:center">3D printing, laser cutting, modeling, machining, and more.</p>
+    <div class="subsection-grid">
+      <div class="subsection-box">
+        <h3>3D Printing</h3>
+        <p>FDM & SLA services with rapid turnaround and affordable pricing.</p>
+      </div>
+      <div class="subsection-box">
+        <h3>Laser Cutting</h3>
+        <p>High-precision vector and raster cutting available in various materials.</p>
+      </div>
+      <div class="subsection-box">
+        <h3>CNC Machining</h3>
+        <p>Advanced mills and lathes for complex part fabrication.</p>
+      </div>
+      <div class="subsection-box">
+        <h3>3D Modeling & PCB</h3>
+        <p>Design services from CAD to circuit board prototyping.</p>
+      </div>
+    </div>
   </section>
 
   <section id="training">
     <h2 class="section-title">Training</h2>
-    <p style="text-align:center">Join our weekly sessions and get certified to use equipment safely.</p>
+    <div class="subsection-grid">
+      <div class="subsection-box">
+        <h3>Maker Space Training</h3>
+        <p>Basic tool use, safety, and access overview. Weekly Tuesday sessions.</p>
+      </div>
+      <div class="subsection-box">
+        <h3>Red Badge Training</h3>
+        <p>Includes saws and drill press. Hands-on safety-focused training.</p>
+      </div>
+      <div class="subsection-box">
+        <h3>Green Badge Training</h3>
+        <p>Access to CNC and manual mills & lathes for advanced users.</p>
+      </div>
+    </div>
     <div style="text-align:center">
       <a class="btn" href="#">Sign Up for Training</a>
     </div>
