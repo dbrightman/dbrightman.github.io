@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Martinos Center Maker Space</title>
   <style>
     :root {
@@ -23,21 +23,29 @@
       margin: 0;
       padding: 0;
       font-family: Helvetica, Arial, sans-serif;
-      height: 100%;
     }
 
     .hero {
+      background: url("martino_center.jpeg") no-repeat center center/cover;
       height: 100vh;
-      background-image: url('martino_center.jpeg');
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      box-shadow: inset 0 0 100px rgba(0,0,0,0.6);
+      position: relative;
+      color: var(--white);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: var(--white);
+      box-shadow: inset 0 0 150px rgba(0,0,0,0.6);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0));
+      z-index: 0;
     }
 
     .hero-content {
@@ -45,6 +53,8 @@
       padding: 2rem;
       border-radius: 10px;
       animation: fadeIn 2s ease-out;
+      z-index: 1;
+      position: relative;
     }
 
     .hero-content h1 {
@@ -59,14 +69,8 @@
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     nav {
@@ -86,8 +90,22 @@
       text-decoration: none;
     }
 
-    section {
-      padding: 2rem;
+    .background-section {
+      background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url("pic1.jpeg") no-repeat center center/cover;
+      padding: 4rem 2rem;
+      box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+
+    .background-section::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+      z-index: 0;
     }
 
     .section-title {
@@ -95,6 +113,8 @@
       text-align: center;
       font-size: 2rem;
       margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
     }
 
     .btn {
@@ -112,6 +132,8 @@
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
       margin-top: 2rem;
+      position: relative;
+      z-index: 1;
     }
 
     .box {
@@ -120,12 +142,12 @@
       border-radius: 8px;
       padding: 1rem;
       background: #f9f9f9;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .box:hover {
       transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
     .box h3, .box h4 {
@@ -162,21 +184,6 @@
   </style>
 </head>
 <body>
-  <section class="hero">
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#training">Training</a>
-      <a href="#equipment">Equipment</a>
-      <a href="#safety">Safety</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="hero-content">
-      <h1>Martinos Center Maker Space</h1>
-      <p>A state-of-the-art rapid prototyping facility located in the heart of Charlestown at CNY Building 149. Open to all Martinos Center members.</p>
-    </div>
-  </section>
-
-  <!-- Continue with other sections (Services, Training, Equipment, Safety, Contact, Footer) as previously defined -->
-
+  <!-- Your full HTML content here -->
 </body>
 </html>
