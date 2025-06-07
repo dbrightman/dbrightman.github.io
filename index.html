@@ -90,24 +90,6 @@
       text-decoration: none;
     }
 
-    .background-section {
-      background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url("pic1.jpeg") no-repeat center center/cover;
-      padding: 4rem 2rem;
-      box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.6);
-      position: relative;
-    }
-
-    .background-section::before {
-      content: '';
-      position: absolute;
-      top: -100px;
-      left: 0;
-      width: 100%;
-      height: 200px;
-      background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
-      z-index: 0;
-    }
-
     .section-title {
       color: var(--blue);
       text-align: center;
@@ -164,16 +146,6 @@
       margin-bottom: 0.6rem;
     }
 
-    iframe {
-      width: 100%;
-      max-width: 800px;
-      height: 600px;
-      border: 1px solid var(--gray);
-      border-radius: 8px;
-      margin: 2rem auto;
-      display: block;
-    }
-
     footer {
       background: var(--blue);
       color: var(--white);
@@ -184,6 +156,193 @@
   </style>
 </head>
 <body>
-  <!-- Your full HTML content here -->
+  <section class="hero">
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#training">Training</a>
+      <a href="#equipment">Equipment</a>
+      <a href="#safety">Safety</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="hero-content">
+      <h1>Martinos Center Maker Space</h1>
+      <p>A state-of-the-art rapid prototyping facility located in the heart of Charlestown at CNY Building 149. Open to all Martinos Center members.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Services</h2>
+    <div class="grid">
+      <div class="box">
+        <h3>3D Printing</h3>
+        <ul>
+          <li>6 Bambu Labs X1C FDM Printers</li>
+          <li>1 Formlabs 3L SLA Printer</li>
+          <li>Multiple material support</li>
+          <li>5-20x cheaper than external vendors</li>
+          <li>3-5 day turnaround time</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Laser Cutting</h3>
+        <ul>
+          <li>Epilog Fusion Edge 24" x 36"</li>
+          <li>Vector cutting capabilities</li>
+          <li>Raster engraving</li>
+          <li>Multiple material compatibility</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>CNC Machining</h3>
+        <ul>
+          <li>TRAK DPM RX5 3-Axis CNC Bed Mill</li>
+          <li>Benchtop 4-Axis CNC Mill</li>
+          <li>Benchtop 2-Axis CNC Lathe</li>
+          <li>Precision machining services</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>3D Modeling & PCB</h3>
+        <ul>
+          <li>CAD modeling services</li>
+          <li>PCB design and layout</li>
+          <li>Prototype development</li>
+          <li>Design optimization</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="training">
+    <h2 class="section-title">Training</h2>
+    <div class="grid">
+      <div class="box">
+        <h3>Maker Space Training</h3>
+        <p><strong>Online Available</strong><br>Every Tuesday 10-11 AM</p>
+        <ul>
+          <li>3D Printing</li>
+          <li>Soldering/Reflow</li>
+          <li>Hand Tools</li>
+          <li>Laser Cutter (Optional)</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Red Badge Training</h3>
+        <p><strong>Coming Soon</strong></p>
+        <ul>
+          <li>Horizontal Bandsaw</li>
+          <li>Vertical Bandsaw</li>
+          <li>Drill Press</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Green Badge Training</h3>
+        <p><strong>Coming Soon</strong></p>
+        <ul>
+          <li>Manual Knee Mill</li>
+          <li>Manual Lathe</li>
+          <li>CNC Bed Mill</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="equipment">
+    <h2 class="section-title">Equipment Specifications</h2>
+    <div class="grid">
+      <div class="box">
+        <h3>Bambu Labs X1C</h3>
+        <ul>
+          <li>Build Volume: 256 x 256 x 256 mm</li>
+          <li>Resolution: 0.08mm layer height</li>
+          <li>Materials: PLA, PETG, ASA, PC, TPU</li>
+          <li>Features: Enclosed, Fast, Affordable</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Formlabs 3L</h3>
+        <ul>
+          <li>Technology: SLA</li>
+          <li>Build Volume: 335 x 200 x 300 mm</li>
+          <li>Accuracy: 25 microns</li>
+          <li>Laser: 250 mW, 405 nm</li>
+          <li>Materials: Clear V4 (expanding)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="safety">
+    <h2 class="section-title">Safety First</h2>
+    <div class="grid">
+      <div class="box">
+        <h4>General Lab Safety</h4>
+        <ul>
+          <li>No running or horseplay</li>
+          <li>Keep workspace clean</li>
+          <li>Ask before using unknown materials</li>
+          <li>Report accidents immediately</li>
+          <li>Know emergency equipment locations</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h4>Personal Safety</h4>
+        <ul>
+          <li>Closed-toe shoes required</li>
+          <li>Safety glasses when working</li>
+          <li>Tie back long hair</li>
+          <li>Remove loose jewelry</li>
+          <li>Appropriate PPE always</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h4>Access Requirements</h4>
+        <ul>
+          <li>Complete appropriate training</li>
+          <li>Open 9:00-5:00 Mon-Fri</li>
+          <li>Never work alone</li>
+          <li>Two trained users minimum</li>
+          <li>Follow MGB R.A.C.E. procedures</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Get Started</h2>
+    <div class="grid">
+      <div class="box">
+        <h4>Location</h4>
+        <p>1st Floor, CNY Building 149<br>Charlestown</p>
+        <p><strong>Hours:</strong><br>9:30 AM - 5:00 PM<br>Monday - Friday</p>
+      </div>
+      <div class="box">
+        <h4>Contact Information</h4>
+        <p><strong>Jeff Short</strong><br>Shop Manager</p>
+        <p>Email: exampleemail@gmail.com</p>
+        <p>Phone: (123)-456-7890</p>
+      </div>
+      <div class="box">
+        <h4>Get Access</h4>
+        <p>Open to all Martinos Center Members</p>
+        <p><strong>Training Schedule:</strong><br>Every Tuesday 10-11 AM</p>
+        <a href="#" class="btn">Sign Up for Training</a>
+      </div>
+      <div class="box">
+        <h4>Submit Print Jobs</h4>
+        <p>Ready to start your project?</p>
+        <ul>
+          <li>Transparent pricing</li>
+          <li>3-5 day turnaround</li>
+          <li>Bill to fund numbers</li>
+        </ul>
+        <a href="#" class="btn">Submit Job</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Martinos Center Maker Space. All rights reserved.
+  </footer>
 </body>
 </html>
