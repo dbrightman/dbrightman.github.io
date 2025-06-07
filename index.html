@@ -2,162 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Martinos Center Maker Space</title>
+  <title>Test Background</title>
   <style>
-    :root {
-      --teal: #01828E;
-      --blue: #003A96;
-      --light-teal: #B1E4E3;
-      --white: #FFFFFF;
-      --black: #000000;
-      --gray: #808080;
-      --cyan: #0077C8;
-      --gold: #CF7F00;
-      --purple: #5C068C;
-      --red: #CE0037;
-    }
-
     body, html {
       margin: 0;
-      padding: 0;
-      font-family: Helvetica, Arial, sans-serif;
+      height: 100%;
     }
 
     .hero {
-      background: url('martino_center.jpeg') no-repeat center center/cover;
       height: 100vh;
-      position: relative;
-      color: var(--white);
+      background: url('martino_center.jpg') no-repeat center center/cover;
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      box-shadow: inset 0 0 100px rgba(0,0,0,0.6);
-    }
-
-    .hero-content {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 2rem;
-      border-radius: 10px;
-      animation: fadeIn 2s ease-out;
-    }
-
-    .hero-content h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero-content p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    nav {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      display: flex;
-      justify-content: center;
-      padding: 1rem;
-      z-index: 1000;
-    }
-
-    nav a {
-      color: var(--white);
-      margin: 0 1rem;
-      text-decoration: none;
-    }
-
-    section {
-      padding: 2rem;
-    }
-
-    .section-title {
-      color: var(--blue);
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .btn {
-      background: var(--red);
-      color: var(--white);
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      border-radius: 4px;
-      display: inline-block;
-      margin-top: 1rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .box {
-      border: 1px solid var(--gray);
-      border-left: 5px solid var(--teal);
-      border-radius: 8px;
-      padding: 1rem;
-      background: #f9f9f9;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .box:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    .box h3, .box h4 {
-      margin-top: 0;
-      color: var(--blue);
-    }
-
-    .box ul {
-      padding-left: 20px;
-      list-style-type: disc;
-    }
-
-    .box ul li {
-      margin-bottom: 0.6rem;
-    }
-
-    iframe {
-      width: 100%;
-      max-width: 800px;
-      height: 600px;
-      border: 1px solid var(--gray);
-      border-radius: 8px;
-      margin: 2rem auto;
-      display: block;
-    }
-
-    footer {
-      background: var(--blue);
-      color: var(--white);
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      color: white;
+      font-family: sans-serif;
     }
   </style>
 </head>
 <body>
-  <!-- The rest of the body remains unchanged -->
+  <div class="hero">
+    <h1>Hello Maker Space</h1>
+  </div>
 </body>
 </html>
