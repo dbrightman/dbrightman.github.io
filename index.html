@@ -16,24 +16,28 @@
       --gold: #CF7F00;
       --purple: #5C068C;
       --red: #CE0037;
+      --orange: #FF6600;
     }
 
     body, html {
       margin: 0;
       padding: 0;
       font-family: Helvetica, Arial, sans-serif;
+      height: 100%;
     }
 
     .hero {
-      background: url('martino_center.jpg') no-repeat center center/cover;
       height: 100vh;
-      position: relative;
-      color: var(--white);
+      background-image: url('martino_center.jpeg');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      box-shadow: inset 0 0 100px rgba(0,0,0,0.6);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      box-shadow: inset 0 0 100px rgba(0,0,0,0.6);
+      color: var(--white);
     }
 
     .hero-content {
@@ -94,7 +98,7 @@
     }
 
     .btn {
-      background: var(--red);
+      background: var(--orange);
       color: var(--white);
       padding: 0.5rem 1rem;
       text-decoration: none;
@@ -116,7 +120,7 @@
       border-radius: 8px;
       padding: 1rem;
       background: #f9f9f9;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .box:hover {
@@ -158,6 +162,21 @@
   </style>
 </head>
 <body>
-  <!-- The rest of the body remains unchanged -->
+  <section class="hero">
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#training">Training</a>
+      <a href="#equipment">Equipment</a>
+      <a href="#safety">Safety</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="hero-content">
+      <h1>Martinos Center Maker Space</h1>
+      <p>A state-of-the-art rapid prototyping facility located in the heart of Charlestown at CNY Building 149. Open to all Martinos Center members.</p>
+    </div>
+  </section>
+
+  <!-- Continue with other sections (Services, Training, Equipment, Safety, Contact, Footer) as previously defined -->
+
 </body>
 </html>
