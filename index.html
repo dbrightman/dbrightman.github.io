@@ -25,6 +25,7 @@
       font-family: Helvetica, Arial, sans-serif;
       overflow-x: hidden;
       width: 100%;
+      scroll-behavior: smooth;
     }
 
     .hero {
@@ -90,6 +91,7 @@
       color: var(--white);
       margin: 0 1rem;
       text-decoration: none;
+      cursor: pointer;
     }
 
     .section-title {
@@ -161,11 +163,11 @@
 <body>
   <section class="hero">
     <nav>
-      <a href="#services">Services</a>
-      <a href="#training">Training</a>
-      <a href="#equipment">Equipment</a>
-      <a href="#safety">Safety</a>
-      <a href="#contact">Contact</a>
+      <a data-scroll-to="services">Services</a>
+      <a data-scroll-to="training">Training</a>
+      <a data-scroll-to="equipment">Equipment</a>
+      <a data-scroll-to="safety">Safety</a>
+      <a data-scroll-to="contact">Contact</a>
     </nav>
     <div class="hero-content">
       <h1>Martinos Center Maker Space</h1>
@@ -339,7 +341,7 @@
           <li>3-5 day turnaround</li>
           <li>Bill to fund numbers</li>
         </ul>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfguK2TuJRNczhRGUGpNXHR16Xbm0PshDQFStMXJvF93ZOLtg/viewform?usp=header" target="_blank" class="btn">Submit Job</a>
+        <a href="https://forms.gle/your-google-form-link" target="_blank" class="btn">Submit Job</a>
       </div>
     </div>
   </section>
@@ -347,5 +349,18 @@
   <footer>
     &copy; 2025 Martinos Center Maker Space. All rights reserved.
   </footer>
+
+  <script>
+    document.querySelectorAll('nav a[data-scroll-to]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('data-scroll-to');
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
