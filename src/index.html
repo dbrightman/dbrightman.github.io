@@ -1,379 +1,569 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Martinos Center Maker Space</title>
-  <style>
-    :root {
-      --teal: #01828E;
-      --blue: #003A96;
-      --light-teal: #B1E4E3;
-      --white: #FFFFFF;
-      --black: #000000;
-      --gray: #808080;
-      --cyan: #0077C8;
-      --gold: #CF7F00;
-      --purple: #5C068C;
-      --red: #CE0037;
-      --orange: #FF6600;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: Helvetica, Arial, sans-serif;
-      overflow-x: hidden;
-      width: 100%;
-      scroll-behavior: smooth;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
 
-    .hero {
-      background: url("martino_center.jpeg") no-repeat center center/cover;
-      height: 100vh;
-      position: relative;
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      box-shadow: inset 0 0 150px rgba(0,0,0,0.6);
-    }
+        /* Header */
+        header {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
 
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -100px;
-      left: 0;
-      width: 100%;
-      height: 200px;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0));
-      z-index: 0;
-    }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
 
-    .hero-content {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 2rem;
-      border-radius: 10px;
-      animation: fadeIn 2s ease-out;
-      z-index: 1;
-      position: relative;
-    }
+        header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-    .hero-content h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-    .hero-content p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
 
-    nav {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      display: flex;
-      justify-content: center;
-      padding: 1rem;
-      z-index: 1000;
-    }
+        nav a:hover {
+            color: #000;
+        }
 
-    nav a {
-      color: var(--white);
-      margin: 0 1rem;
-      text-decoration: none;
-      cursor: pointer;
-    }
+        nav a.active {
+            color: #000;
+            border-bottom: 2px solid #000;
+        }
 
-    .section-title {
-      color: var(--blue);
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      position: relative;
-      z-index: 1;
-    }
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
 
-    .btn {
-      background: var(--orange);
-      color: var(--white);
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      border-radius: 4px;
-      display: inline-block;
-      margin-top: 1rem;
-    }
+        /* Page Content */
+        .page {
+            display: none;
+        }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-      position: relative;
-      z-index: 1;
-      padding: 0 1rem;
-    }
+        .page.active {
+            display: block;
+        }
 
-    .box-link {
-      text-decoration: none;
-      color: inherit;
-    }
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
 
-    .box {
-      border: 1px solid var(--gray);
-      border-left: 5px solid var(--teal);
-      border-radius: 8px;
-      padding: 1rem;
-      background: #f9f9f9;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
 
-    .box:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
+        .project-card {
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
 
-    .box h3, .box h4 {
-      margin-top: 0;
-      color: var(--blue);
-    }
+        .project-card:hover {
+            transform: translateY(-4px);
+        }
 
-    .box ul {
-      padding-left: 20px;
-      list-style-type: disc;
-    }
+        .project-card-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            background: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 1rem;
+        }
 
-    .box ul li {
-      margin-bottom: 0.6rem;
-    }
+        .project-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    footer {
-      background: var(--blue);
-      color: var(--white);
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-  </style>
+        .project-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .project-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Individual Project Page */
+        .project-detail {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .back-button:hover {
+            color: #000;
+        }
+
+        .project-hero {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            background: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 2rem;
+        }
+
+        .project-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-detail h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .project-meta {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .project-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .project-content h2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .project-content p {
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .tag {
+            background: #f0f0f0;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .project-links {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .project-links a {
+            display: inline-block;
+            margin-right: 1.5rem;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #333;
+        }
+
+        .project-links a:hover {
+            color: #000;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-hero {
+                height: 250px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <section class="hero">
+    <header>
+        <h1>Your Name</h1>
+        <p>Brief tagline or description about what you do</p>
+    </header>
+
     <nav>
-      <a data-scroll-to="services">Services</a>
-      <a data-scroll-to="training">Training</a>
-      <a data-scroll-to="equipment">Equipment</a>
-      <a data-scroll-to="safety">Safety</a>
-      <a data-scroll-to="contact">Contact</a>
+        <ul>
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#all-projects" class="nav-link">All Projects</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
     </nav>
-    <div class="hero-content">
-      <h1>Martinos Center Maker Space</h1>
-      <p>A state-of-the-art rapid prototyping facility located in the heart of Charlestown at CNY Building 149. Open to all Martinos Center members.</p>
-    </div>
-  </section>
 
-  <section id="services">
-    <h2 class="section-title">Services</h2>
-    <div class="grid">
-      <a href="services.html#3d-printing" class="box-link">
-        <div class="box">
-          <h3>3D Printing</h3>
-          <ul>
-            <li>6 Bambu Labs X1C FDM Printers</li>
-            <li>1 Formlabs 3L SLA Printer</li>
-            <li>Multiple material support</li>
-            <li>5-20x cheaper than external vendors</li>
-            <li>3-5 day turnaround time</li>
-          </ul>
+    <div class="container">
+        <!-- HOME PAGE -->
+        <div id="home" class="page active">
+            <h2 style="margin-bottom: 2rem; font-size: 2rem;">Featured Projects</h2>
+            <div class="projects-grid">
+                <a href="#project-1" class="project-card project-link">
+                    <div class="project-card-image">
+                        <img src="https://via.placeholder.com/400x300/2c3e50/ffffff?text=Project+1" alt="Project 1">
+                    </div>
+                    <h3>Project Title One</h3>
+                    <p>Brief description of what this project is about and the key technologies used.</p>
+                </a>
+
+                <a href="#project-2" class="project-card project-link">
+                    <div class="project-card-image">
+                        <img src="https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Project+2" alt="Project 2">
+                    </div>
+                    <h3>Project Title Two</h3>
+                    <p>Brief description of what this project is about and the key technologies used.</p>
+                </a>
+
+                <a href="#project-3" class="project-card project-link">
+                    <div class="project-card-image">
+                        <img src="https://via.placeholder.com/400x300/4a4a4a/ffffff?text=Project+3" alt="Project 3">
+                    </div>
+                    <h3>Project Title Three</h3>
+                    <p>Brief description of what this project is about and the key technologies used.</p>
+                </a>
+            </div>
         </div>
-      </a>
-      <a href="services.html#laser-cutting" class="box-link">
-        <div class="box">
-          <h3>Laser Cutting</h3>
-          <ul>
-            <li>Epilog Fusion Edge 24" x 36"</li>
-            <li>Vector cutting capabilities</li>
-            <li>Raster engraving</li>
-            <li>Multiple material compatibility</li>
-          </ul>
+
+        <!-- ALL PROJECTS PAGE -->
+        <div id="all-projects" class="page">
+            <h2 style="margin-bottom: 2rem; font-size: 2rem;">All Projects</h2>
+            <div class="projects-grid">
+                <a href="#project-1" class="project-card project-link">
+                    <div class="project-card-image">
+                        <img src="https://via.placeholder.com/400x300/2c3e50/ffffff?text=Project+1" alt="Project 1">
+                    </div>
+                    <h3>Project Title One</h3>
+                    <p>Brief description of what this project is about.</p>
+                </a>
+
+                <a href="#project-2" class="project-card project-link">
+                    <div class="project-card-image">
+                        <img src="https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Project+2" alt="Project 2">
+                    </div>
+                    <h3>Project Title Two</h3>
+                    <p>Brief description of what this project is about.</p>
+                </a>
+
+                <a href="#project-3" class="project-card project-link">
+                    <div class="project-card-image">
+                        <img src="https://via.placeholder.com/400x300/4a4a4a/ffffff?text=Project+3" alt="Project 3">
+                    </div>
+                    <h3>Project Title Three</h3>
+                    <p>Brief description of what this project is about.</p>
+                </a>
+
+                <a href="#project-4" class="project-card project-link">
+                    <div class="project-card-image">
+                        <img src="https://via.placeholder.com/400x300/5a5a5a/ffffff?text=Project+4" alt="Project 4">
+                    </div>
+                    <h3>Project Title Four</h3>
+                    <p>Brief description of what this project is about.</p>
+                </a>
+
+                <a href="#project-5" class="project-card project-link">
+                    <div class="project-card-image">
+                        <img src="https://via.placeholder.com/400x300/3a3a3a/ffffff?text=Project+5" alt="Project 5">
+                    </div>
+                    <h3>Project Title Five</h3>
+                    <p>Brief description of what this project is about.</p>
+                </a>
+
+                <a href="#project-6" class="project-card project-link">
+                    <div class="project-card-image">
+                        <img src="https://via.placeholder.com/400x300/6a6a6a/ffffff?text=Project+6" alt="Project 6">
+                    </div>
+                    <h3>Project Title Six</h3>
+                    <p>Brief description of what this project is about.</p>
+                </a>
+            </div>
         </div>
-      </a>
-      <a href="services.html#cnc-machining" class="box-link">
-        <div class="box">
-          <h3>CNC Machining</h3>
-          <ul>
-            <li>TRAK DPM RX5 3-Axis CNC Bed Mill</li>
-            <li>Benchtop 4-Axis CNC Mill</li>
-            <li>Benchtop 2-Axis CNC Lathe</li>
-            <li>Precision machining services</li>
-          </ul>
+
+        <!-- INDIVIDUAL PROJECT PAGES -->
+        <div id="project-1" class="page project-detail">
+            <a href="#all-projects" class="back-button project-link">← Back to Projects</a>
+            
+            <div class="project-hero">
+                <img src="https://via.placeholder.com/900x400/2c3e50/ffffff?text=Project+Hero+Image" alt="Project 1">
+            </div>
+
+            <h1>Project Title One</h1>
+            <p class="project-meta">Your Role • Year • Company/Context</p>
+
+            <div class="project-content">
+                <h2>Overview</h2>
+                <p>Write a compelling overview of your project. What problem were you solving? What was the context? Why is this project significant?</p>
+
+                <h2>My Role</h2>
+                <p>Describe your specific contributions to the project. What were your responsibilities? What decisions did you make?</p>
+
+                <h2>Process</h2>
+                <p>Walk through your design or development process. What steps did you take? What challenges did you face and how did you overcome them?</p>
+
+                <h2>Results</h2>
+                <p>What was the outcome? Include metrics, feedback, or impact if possible. What did you learn from this project?</p>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+            </div>
+
+            <div class="project-links">
+                <a href="#">View Live Site</a>
+                <a href="#">GitHub Repository</a>
+                <a href="#">Case Study</a>
+            </div>
         </div>
-      </a>
-      <a href="services.html#modeling-pcb" class="box-link">
-        <div class="box">
-          <h3>3D Modeling & PCB</h3>
-          <ul>
-            <li>CAD modeling services</li>
-            <li>PCB design and layout</li>
-            <li>Prototype development</li>
-            <li>Design optimization</li>
-          </ul>
+
+        <div id="project-2" class="page project-detail">
+            <a href="#all-projects" class="back-button project-link">← Back to Projects</a>
+            
+            <div class="project-hero">
+                <img src="https://via.placeholder.com/900x400/1a1a1a/ffffff?text=Project+2+Hero" alt="Project 2">
+            </div>
+
+            <h1>Project Title Two</h1>
+            <p class="project-meta">Your Role • Year • Company/Context</p>
+
+            <div class="project-content">
+                <h2>Overview</h2>
+                <p>Project description goes here...</p>
+
+                <h2>Challenge</h2>
+                <p>What problem were you solving?</p>
+
+                <h2>Solution</h2>
+                <p>How did you approach it?</p>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Django</span>
+                <span class="tag">PostgreSQL</span>
+            </div>
+
+            <div class="project-links">
+                <a href="#">View Project</a>
+                <a href="#">GitHub</a>
+            </div>
         </div>
-      </a>
+
+        <div id="project-3" class="page project-detail">
+            <a href="#all-projects" class="back-button project-link">← Back to Projects</a>
+            
+            <div class="project-hero">
+                <img src="https://via.placeholder.com/900x400/4a4a4a/ffffff?text=Project+3+Hero" alt="Project 3">
+            </div>
+
+            <h1>Project Title Three</h1>
+            <p class="project-meta">Your Role • Year • Company/Context</p>
+
+            <div class="project-content">
+                <p>Full project details here...</p>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">Figma</span>
+                <span class="tag">Adobe XD</span>
+                <span class="tag">UI/UX</span>
+            </div>
+
+            <div class="project-links">
+                <a href="#">View Prototype</a>
+            </div>
+        </div>
+
+        <!-- ABOUT PAGE -->
+        <div id="about" class="page">
+            <h2 style="margin-bottom: 2rem; font-size: 2rem;">About Me</h2>
+            <div class="about-content">
+                <p>Write about yourself here. Share your background, what drives you, and what you're passionate about. Talk about your journey, your skills, and what makes your work unique.</p>
+                
+                <p>You can include multiple paragraphs to tell your story in a compelling way.</p>
+            </div>
+        </div>
+
+        <!-- CONTACT PAGE -->
+        <div id="contact" class="page">
+            <h2 style="margin-bottom: 2rem; font-size: 2rem;">Get in Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <p>your.email@example.com</p>
+                </div>
+                <div class="contact-item">
+                    <h3>LinkedIn</h3>
+                    <p>linkedin.com/in/yourprofile</p>
+                </div>
+                <div class="contact-item">
+                    <h3>GitHub</h3>
+                    <p>github.com/yourusername</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <section id="training">
-    <h2 class="section-title">Training</h2>
-    <div class="grid">
-      <div class="box">
-        <h3>Maker Space Training</h3>
-        <p><strong>Online Available</strong><br>Every Tuesday 10-11 AM</p>
-        <ul>
-          <li>3D Printing</li>
-          <li>Soldering/Reflow</li>
-          <li>Hand Tools</li>
-          <li>Laser Cutter (Optional)</li>
-        </ul>
-      </div>
-      <div class="box">
-        <h3>Red Badge Training</h3>
-        <p><strong>Coming Soon</strong></p>
-        <ul>
-          <li>Horizontal Bandsaw</li>
-          <li>Vertical Bandsaw</li>
-          <li>Drill Press</li>
-        </ul>
-      </div>
-      <div class="box">
-        <h3>Green Badge Training</h3>
-        <p><strong>Coming Soon</strong></p>
-        <ul>
-          <li>Manual Knee Mill</li>
-          <li>Manual Lathe</li>
-          <li>CNC Bed Mill</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <footer>
+        <p>&copy; 2026 Your Name. All rights reserved.</p>
+    </footer>
 
-  <section id="equipment">
-    <h2 class="section-title">Equipment Specifications</h2>
-    <div class="grid">
-      <div class="box">
-        <h3>Bambu Labs X1C</h3>
-        <ul>
-          <li>Build Volume: 256 x 256 x 256 mm</li>
-          <li>Resolution: 0.08mm layer height</li>
-          <li>Materials: PLA, PETG, ASA, PC, TPU</li>
-          <li>Features: Enclosed, Fast, Affordable</li>
-        </ul>
-      </div>
-      <div class="box">
-        <h3>Formlabs 3L</h3>
-        <ul>
-          <li>Technology: SLA</li>
-          <li>Build Volume: 335 x 200 x 300 mm</li>
-          <li>Accuracy: 25 microns</li>
-          <li>Laser: 250 mW, 405 nm</li>
-          <li>Materials: Clear V4 (expanding)</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <script>
+        // Navigation functionality
+        const navLinks = document.querySelectorAll('.nav-link');
+        const projectLinks = document.querySelectorAll('.project-link');
+        const pages = document.querySelectorAll('.page');
 
-  <section id="safety">
-    <h2 class="section-title">Safety First</h2>
-    <div class="grid">
-      <div class="box">
-        <h4>General Lab Safety</h4>
-        <ul>
-          <li>No running or horseplay</li>
-          <li>Keep workspace clean</li>
-          <li>Ask before using unknown materials</li>
-          <li>Report accidents immediately</li>
-          <li>Know emergency equipment locations</li>
-        </ul>
-      </div>
-      <div class="box">
-        <h4>Personal Safety</h4>
-        <ul>
-          <li>Closed-toe shoes required</li>
-          <li>Safety glasses when working</li>
-          <li>Tie back long hair</li>
-          <li>Remove loose jewelry</li>
-          <li>Appropriate PPE always</li>
-        </ul>
-      </div>
-      <div class="box">
-        <h4>Access Requirements</h4>
-        <ul>
-          <li>Complete appropriate training</li>
-          <li>Open 9:00-5:00 Mon-Fri</li>
-          <li>Never work alone</li>
-          <li>Two trained users minimum</li>
-          <li>Follow MGB R.A.C.E. procedures</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+        function showPage(pageId) {
+            // Hide all pages
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
 
-  <section id="contact">
-    <h2 class="section-title">Get Started</h2>
-    <div class="grid">
-      <div class="box">
-        <h4>Location</h4>
-        <p>1st Floor, CNY Building 149<br>Charlestown</p>
-        <p><strong>Hours:</strong><br>9:30 AM - 5:00 PM<br>Monday - Friday</p>
-      </div>
-      <div class="box">
-        <h4>Contact Information</h4>
-        <p><strong>Jeff Short</strong><br>Shop Manager</p>
-        <p>Email: exampleemail@gmail.com</p>
-        <p>Phone: (123)-456-7890</p>
-      </div>
-      <div class="box">
-        <h4>Get Access</h4>
-        <p>Open to all Martinos Center Members</p>
-        <p><strong>Training Schedule:</strong><br>Every Tuesday 10-11 AM</p>
-        <a href="#" class="btn">Sign Up for Training</a>
-      </div>
-      <div class="box">
-        <h4>Submit Print Jobs</h4>
-        <p>Ready to start your project?</p>
-        <ul>
-          <li>Transparent pricing</li>
-          <li>3-5 day turnaround</li>
-          <li>Bill to fund numbers</li>
-        </ul>
-        <a href="https://forms.gle/your-google-form-link" target="_blank" class="btn">Submit Job</a>
-      </div>
-    </div>
-  </section>
+            // Update active nav link
+            navLinks.forEach(link => link.classList.remove('active'));
+            const activeNav = document.querySelector(`a[href="#${pageId}"]`);
+            if (activeNav && activeNav.classList.contains('nav-link')) {
+                activeNav.classList.add('active');
+            }
 
-  <footer>
-    &copy; 2025 Martinos Center Maker Space. All rights reserved.
-  </footer>
-
-  <script>
-    document.querySelectorAll('nav a[data-scroll-to]').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('data-scroll-to');
-        const target = document.getElementById(targetId);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // Scroll to top
+            window.scrollTo(0, 0);
         }
-      });
-    });
-  </script>
+
+        // Handle navigation clicks
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageId = link.getAttribute('href').substring(1);
+                showPage(pageId);
+            });
+        });
+
+        // Handle project card and back button clicks
+        projectLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageId = link.getAttribute('href').substring(1);
+                showPage(pageId);
+            });
+        });
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', (e) => {
+            if (e.state && e.state.page) {
+                showPage(e.state.page);
+            }
+        });
+    </script>
 </body>
 </html>
