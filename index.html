@@ -165,16 +165,97 @@
         .project-hero {
             width: 100%;
             height: 400px;
-            overflow: hidden;
             background: #f5f5f5;
             border: 1px solid #e0e0e0;
             margin-bottom: 2rem;
+            position: relative;
         }
 
-        .project-hero img {
+        .image-carousel {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-images {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .carousel-image.active {
+            opacity: 1;
+        }
+
+        .carousel-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            z-index: 10;
+        }
+
+        .carousel-button:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .carousel-button.prev {
+            left: 1rem;
+        }
+
+        .carousel-button.next {
+            right: 1rem;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .carousel-dot.active {
+            background: rgba(255, 255, 255, 1);
         }
 
         .project-detail h1 {
@@ -284,9 +365,8 @@
 </head>
 <body>
     <header>
-        <h1>Daniel Brightman</h1>
-        <p>Candidate for Bachelors of Arts in Mechanical Engineering with a minor in Computer Science</p>
-
+        <h1>Your Name</h1>
+        <p>Brief tagline or description about what you do</p>
     </header>
 
     <nav>
@@ -388,7 +468,30 @@
             <a href="#all-projects" class="back-button project-link">← Back to Projects</a>
             
             <div class="project-hero">
-                <img src="https://via.placeholder.com/900x400/2c3e50/ffffff?text=Project+Hero+Image" alt="Project 1">
+                <div class="image-carousel" data-carousel="project-1">
+                    <div class="carousel-images">
+                        <div class="carousel-image active">
+                            <img src="https://via.placeholder.com/900x400/2c3e50/ffffff?text=Image+1" alt="Project 1 - Image 1">
+                        </div>
+                        <div class="carousel-image">
+                            <img src="https://via.placeholder.com/900x400/3d4f61/ffffff?text=Image+2" alt="Project 1 - Image 2">
+                        </div>
+                        <div class="carousel-image">
+                            <img src="https://via.placeholder.com/900x400/4e6072/ffffff?text=Image+3" alt="Project 1 - Image 3">
+                        </div>
+                        <div class="carousel-image">
+                            <img src="https://via.placeholder.com/900x400/5f7183/ffffff?text=Image+4" alt="Project 1 - Image 4">
+                        </div>
+                    </div>
+                    <button class="carousel-button prev">‹</button>
+                    <button class="carousel-button next">›</button>
+                    <div class="carousel-dots">
+                        <span class="carousel-dot active"></span>
+                        <span class="carousel-dot"></span>
+                        <span class="carousel-dot"></span>
+                        <span class="carousel-dot"></span>
+                    </div>
+                </div>
             </div>
 
             <h1>Project Title One</h1>
@@ -426,7 +529,26 @@
             <a href="#all-projects" class="back-button project-link">← Back to Projects</a>
             
             <div class="project-hero">
-                <img src="https://via.placeholder.com/900x400/1a1a1a/ffffff?text=Project+2+Hero" alt="Project 2">
+                <div class="image-carousel" data-carousel="project-2">
+                    <div class="carousel-images">
+                        <div class="carousel-image active">
+                            <img src="https://via.placeholder.com/900x400/1a1a1a/ffffff?text=Image+1" alt="Project 2 - Image 1">
+                        </div>
+                        <div class="carousel-image">
+                            <img src="https://via.placeholder.com/900x400/2b2b2b/ffffff?text=Image+2" alt="Project 2 - Image 2">
+                        </div>
+                        <div class="carousel-image">
+                            <img src="https://via.placeholder.com/900x400/3c3c3c/ffffff?text=Image+3" alt="Project 2 - Image 3">
+                        </div>
+                    </div>
+                    <button class="carousel-button prev">‹</button>
+                    <button class="carousel-button next">›</button>
+                    <div class="carousel-dots">
+                        <span class="carousel-dot active"></span>
+                        <span class="carousel-dot"></span>
+                        <span class="carousel-dot"></span>
+                    </div>
+                </div>
             </div>
 
             <h1>Project Title Two</h1>
@@ -459,7 +581,22 @@
             <a href="#all-projects" class="back-button project-link">← Back to Projects</a>
             
             <div class="project-hero">
-                <img src="https://via.placeholder.com/900x400/4a4a4a/ffffff?text=Project+3+Hero" alt="Project 3">
+                <div class="image-carousel" data-carousel="project-3">
+                    <div class="carousel-images">
+                        <div class="carousel-image active">
+                            <img src="https://via.placeholder.com/900x400/4a4a4a/ffffff?text=Image+1" alt="Project 3 - Image 1">
+                        </div>
+                        <div class="carousel-image">
+                            <img src="https://via.placeholder.com/900x400/5b5b5b/ffffff?text=Image+2" alt="Project 3 - Image 2">
+                        </div>
+                    </div>
+                    <button class="carousel-button prev">‹</button>
+                    <button class="carousel-button next">›</button>
+                    <div class="carousel-dots">
+                        <span class="carousel-dot active"></span>
+                        <span class="carousel-dot"></span>
+                    </div>
+                </div>
             </div>
 
             <h1>Project Title Three</h1>
@@ -564,6 +701,70 @@
             if (e.state && e.state.page) {
                 showPage(e.state.page);
             }
+        });
+
+        // Image Carousel functionality
+        class ImageCarousel {
+            constructor(carouselElement) {
+                this.carousel = carouselElement;
+                this.images = this.carousel.querySelectorAll('.carousel-image');
+                this.dots = this.carousel.querySelectorAll('.carousel-dot');
+                this.prevBtn = this.carousel.querySelector('.carousel-button.prev');
+                this.nextBtn = this.carousel.querySelector('.carousel-button.next');
+                this.currentIndex = 0;
+
+                this.init();
+            }
+
+            init() {
+                // Next button
+                this.nextBtn.addEventListener('click', () => this.next());
+                
+                // Previous button
+                this.prevBtn.addEventListener('click', () => this.prev());
+                
+                // Dot navigation
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => this.goToSlide(index));
+                });
+
+                // Keyboard navigation
+                this.carousel.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') this.prev();
+                    if (e.key === 'ArrowRight') this.next();
+                });
+
+                // Make carousel focusable for keyboard navigation
+                this.carousel.setAttribute('tabindex', '0');
+            }
+
+            goToSlide(index) {
+                // Remove active class from current image and dot
+                this.images[this.currentIndex].classList.remove('active');
+                this.dots[this.currentIndex].classList.remove('active');
+
+                // Update index
+                this.currentIndex = index;
+
+                // Add active class to new image and dot
+                this.images[this.currentIndex].classList.add('active');
+                this.dots[this.currentIndex].classList.add('active');
+            }
+
+            next() {
+                const nextIndex = (this.currentIndex + 1) % this.images.length;
+                this.goToSlide(nextIndex);
+            }
+
+            prev() {
+                const prevIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+                this.goToSlide(prevIndex);
+            }
+        }
+
+        // Initialize all carousels
+        document.querySelectorAll('.image-carousel').forEach(carousel => {
+            new ImageCarousel(carousel);
         });
     </script>
 </body>
