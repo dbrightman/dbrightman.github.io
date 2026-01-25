@@ -117,8 +117,8 @@
         .about-content {
             max-width: 800px;
             margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1.15rem;
+            line-height: 1.9;
         }
 
         /* Projects Grid */
@@ -217,9 +217,18 @@
 
         .content-block-image img {
             width: 100%;
-            height: 350px;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
             border: 1px solid #e0e0e0;
+            display: block;
+        }
+
+        .content-block-image figcaption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 0.5rem;
         }
 
         .content-block-text {
@@ -234,10 +243,10 @@
         }
 
         .content-block-text p {
-            font-size: 1.05rem;
-            line-height: 1.8;
+            font-size: 1.15rem;
+            line-height: 1.9;
             color: #444;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         /* Contact */
@@ -290,7 +299,7 @@
             }
 
             .content-block-image img {
-                height: 250px;
+                height: auto;
             }
         }
     </style>
@@ -356,7 +365,7 @@
             <div class="projects-grid">
                 <a href="#project-1" class="project-card project-link">
                     <div class="project-card-image">
-                        <img src="https://via.placeholder.com/400x300/2c3e50/ffffff?text=Project+1" alt="Project 1">
+                        <img src="braces_phantom_overview.png" alt="Project 1">
                     </div>
                     <h3>Pediatric MRI Head Phantom</h3>
                     <p>CAD modeled head phantom used for MRI research to aid in pediatric care</p>
@@ -364,26 +373,26 @@
 
                 <a href="#project-2" class="project-card project-link">
                     <div class="project-card-image">
-                        <img src="https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Project+2" alt="Project 2">
+                        <img src="acdc_final_wiring.png" alt="Project 2">
                     </div>
-                    <h3>Project Title Two</h3>
-                    <p>Brief description of what this project is about.</p>
+                    <h3>Low-Field MRI Coil Remapping and Connection Integration</h3>
+                    <p>Updated and CAD modeled layout and connections of low-field MRI coil for research purposes</p>
                 </a>
 
                 <a href="#project-3" class="project-card project-link">
                     <div class="project-card-image">
-                        <img src="https://via.placeholder.com/400x300/4a4a4a/ffffff?text=Project+3" alt="Project 3">
+                        <img src="kicad_odu_connector.png" alt="Project 3">
                     </div>
-                    <h3>Project Title Three</h3>
-                    <p>Brief description of what this project is about.</p>
+                    <h3>Shim Amplifier PCB Connection</h3>
+                    <p>Iterated and updated PCB for ODU connection to shim amplifier using KiCad</p>
                 </a>
 
                 <a href="#project-4" class="project-card project-link">
                     <div class="project-card-image">
-                        <img src="https://via.placeholder.com/400x300/5a5a5a/ffffff?text=Project+4" alt="Project 4">
+                        <img src="robot_final.PNG" alt="Project 4">
                     </div>
-                    <h3>Project Title Four</h3>
-                    <p>Brief description of what this project is about.</p>
+                    <h3>Wifi Controlled Cleaning Robot</h3>
+                    <p>Designed moving robot controlled through wifi and website output from Rapsberry Pi Pico</p>
                 </a>
 
                 <a href="#project-5" class="project-card project-link">
@@ -412,48 +421,52 @@
             <p class="project-meta">Research Engineer • 2025 • The Martino Center - Mass General Brigham</p>
 
             <div class="content-block">
-                <div class="content-block-image">
+                <figure class="content-block-image">
                     <img src="braces_phantom_overview.png" alt="Project Overview">
-                </div>
+                    <figcaption>Figure 1: Pediatric head phantom with braces attachment</figcaption>
+                </figure>
                 <div class="content-block-text">
                     <p>MRI head phantoms are 3D printed models that get filled with a solution to mimic brain 
-                    MR signal and conductivity for research. </p>
+                    MR signal and conductivity for research.</p>
                     <p>Working with Jason Stockmann at the Martinos Center, 
                     I developed a pediatric head phantom to support MRI research focused on improving imaging for pediatric care.</p>
                 </div>
             </div>
 
             <div class="content-block reverse">
-                <div class="content-block-image">
-                    <img src="full_head_phantom.png" alt="My Role">
-                </div>
+                <figure class="content-block-image">
+                    <img src="full_head_phantom.png" alt="Full phantom">
+                    <figcaption>Figure 2: Full assembled head phantom</figcaption>
+                </figure>
                 <div class="content-block-text">
                     <p>In previous research, imaging patients with braces caused consistent problems. 
-                    The metal wires create magnetic field distortions, so parts of the scan end up blurry or completely missing. </p>
+                    The metal wires create magnetic field distortions, so parts of the scan end up blurry or completely missing.</p>
                     <p>This phantom is used as a controlled way to study those artifacts and test 
-                    better magnetic field mapping to improve the image. </p>
+                    better magnetic field mapping to improve the image.</p>
                 </div>
             </div>
 
             <div class="content-block">
-                <div class="content-block-image">
-                    <img src="inside_head_phantom.png" alt="Process">
-                </div>
+                <figure class="content-block-image">
+                    <img src="inside_head_phantom.png" alt="Internal structure">
+                    <figcaption>Figure 3: Internal structure of head phantom</figcaption>
+                </figure>
                 <div class="content-block-text">
-                   <p> I started with the “Angel 1” head phantom mesh from the Martinos Center phantom wiki and iterated on the design. 
-                    I added an extruded section that protrudes from the skull so metal brace wires and brackets can be placed on it. </p>
+                   <p>I started with the "Angel 1" head phantom mesh from the Martinos Center phantom wiki and iterated on the design. 
+                    I added an extruded section that protrudes from the skull so metal brace wires and brackets can be placed on it.</p>
                     <p>I optimized the spacing between the extrusion 
                     and the outer wall so it produced realistic artifact behavior while still sealing properly and preventing leaks.</p>
                 </div>
             </div>
 
             <div class="content-block reverse">
-                <div class="content-block-image">
-                    <img src="braces_phantom_data_results.png" alt="Results">
-                </div>
+                <figure class="content-block-image">
+                    <img src="braces_phantom_data_results.png" alt="MRI results">
+                    <figcaption>Figure 4: MRI scan results showing artifact correction</figcaption>
+                </figure>
                 <div class="content-block-text">
                     <p>This pediatric head phantom is still being used in ongoing research. 
-                        It’s helping the team test field mapping and correction methods,
+                        It's helping the team test field mapping and correction methods,
                          and the results have shown improved image quality when scanning cases affected by braces.</p>
                 </div>
             </div>
@@ -466,34 +479,41 @@
             <p class="project-meta">Research Engineer • 2025 • The Martino Center - Mass General Brigham</p>
 
             <div class="content-block">
-                <div class="content-block-image">
-                    <img src="acdc_final_wiring.png" alt="Project Overview 1">
-                </div>
-                <div class="content-block-image">
-                    <img src="acdc_cad.png" alt="Project Overview 2">
-                </div>                
+                <figure class="content-block-image">
+                    <img src="acdc_final_wiring.png" alt="Final wiring">
+                    <figcaption>Figure 1: Final wiring configuration</figcaption>
+                </figure>
                 <div class="content-block-text">
                     <p>Updated the wiring for a low-field AC/DC MRI coil developed by Jason Stockmann, PhD, to
                          support new ODU connectors for connecting to the shim amplifier.</p> 
                          <p>To implement this, I redesigned the wiring layout and used CAD to model a 
                          mounting piece that holds the female ODU connector and securely attaches it to the coil body.</p>
-                         <P>Each wire was cut to length and resoldered to the appropriate ODU pin so it could be 
-                            installed into the new connector port. </P>
+                         <p>Each wire was cut to length and resoldered to the appropriate ODU pin so it could be 
+                            installed into the new connector port.</p>
                          <p>The main connector opening was machined using a mill, and the CAD mount was designed to take advantage of the 
-                        existing connection cutouts so the new connector port could integrate cleanly with the coil’s original housing.</p>
+                        existing connection cutouts so the new connector port could integrate cleanly with the coil's original housing.</p>
                 </div>
             </div>
 
             <div class="content-block reverse">
-                <div class="content-block-image">
-                    <img src="five_pin_connector_1.JPG" alt="Challenge">
+                <figure class="content-block-image">
+                    <img src="acdc_cad.png" alt="CAD model">
+                    <figcaption>Figure 2: CAD model of connector mount</figcaption>
+                </figure>
+                <div class="content-block-text">
+                    <p>The CAD design was optimized to fit seamlessly with the existing coil structure, ensuring a secure and 
+                    reliable connection while maintaining the coil's functionality.</p>
                 </div>
-                <div class="content-block-image">
-                    <img src="five_pin_CAD.png" alt="Challenge">
-                </div>
+            </div>
+
+            <div class="content-block">
+                <figure class="content-block-image">
+                    <img src="five_pin_connector_1.JPG" alt="Five-pin connector">
+                    <figcaption>Figure 3: Five-pin connector assembly</figcaption>
+                </figure>
                 <div class="content-block-text">
                     <p>As well as this, an F-to-M connection was required, and the previous cable end was loose and easy to damage. 
-                        I designed an Onshape CAD model to both protect the cable and make it easier to assemble and use. </p>
+                        I designed an Onshape CAD model to both protect the cable and make it easier to assemble and use.</p>
                          <p>The part was a 3-section symmetrical design with dedicated wire slots, 
                          so each wire could be placed in the correct position and the cable could be inserted in a simple, 
                          consistent way every time.</p>
@@ -503,21 +523,42 @@
             </div>
 
             <div class="content-block reverse">
-                <div class="content-block-image">
-                    <img src="kicad_odu_connector.png" alt="Challenge">
+                <figure class="content-block-image">
+                    <img src="five_pin_CAD.png" alt="Cable housing CAD">
+                    <figcaption>Figure 4: CAD model of cable housing</figcaption>
+                </figure>
+                <div class="content-block-text">
+                    <p>The 3D printed housing provided strain relief and organized wire management, 
+                    significantly improving the durability and usability of the connector assembly.</p>
                 </div>
-                <div class="content-block-image">
-                    <img src="odu_board.JPG" alt="Challenge">
-                </div>
+            </div>
+
+            <div class="content-block">
+                <figure class="content-block-image">
+                    <img src="kicad_odu_connector.png" alt="KiCad design">
+                    <figcaption>Figure 5: KiCad PCB design</figcaption>
+                </figure>
                 <div class="content-block-text">
                     <p>Iterated on an existing PCB design in KiCad and redesigned the wiring to 
                         support a new 8-wire ribbon cable interface. 
                         This allowed quick switching between two different coils that required different 
                         wiring configurations, without rewiring the system each time.</p>
                         <p>I sourced and verified all required components through Digi-Key and Mouser, 
-                        assembled and soldered the full board, and integrated it into the shim amplifier for testing and use. </p>
+                        assembled and soldered the full board, and integrated it into the shim amplifier for testing and use.</p>
                 </div>
-            </div>          
+            </div>
+
+            <div class="content-block reverse">
+                <figure class="content-block-image">
+                    <img src="odu_board.JPG" alt="Assembled PCB">
+                    <figcaption>Figure 6: Assembled PCB with ODU connector</figcaption>
+                </figure>
+                <div class="content-block-text">
+                    <p>The final PCB assembly successfully enabled seamless coil switching and improved 
+                    the overall workflow efficiency for the research team.</p>
+                </div>
+            </div>
+        </div>
 
         <div id="project-3" class="page project-detail">
             <a href="#all-projects" class="back-button project-link">← Back to Projects</a>
@@ -526,22 +567,47 @@
             <p class="project-meta">Research Engineer • 2025 • The Martino Center - Mass General Brigham</p>
 
             <div class="content-block">
-                <div class="content-block-image">
-                    <img src="https://via.placeholder.com/500x350/4a4a4a/ffffff?text=Section+1" alt="Section 1">
-                </div>
+                <figure class="content-block-image">
+                    <img src="kicad_odu_connector.png" alt="KiCad design">
+                    <figcaption>Figure 1: KiCad PCB design for ODU connector interface</figcaption>
+                </figure>
                 <div class="content-block-text">
-                    <h2>Project Details</h2>
-                    <p>Full project details here. Add as many alternating sections as you need.</p>
+                    <p>Iterated on an existing PCB design in KiCad and redesigned the wiring to 
+                        support a new 8-wire ribbon cable interface. 
+                        This allowed quick switching between two different coils that required different 
+                        wiring configurations, without rewiring the system each time.</p>
                 </div>
             </div>
 
             <div class="content-block reverse">
-                <div class="content-block-image">
-                    <img src="https://via.placeholder.com/500x350/5b5b5b/ffffff?text=Section+2" alt="Section 2">
-                </div>
+                <figure class="content-block-image">
+                    <img src="odu_board.JPG" alt="Assembled board">
+                    <figcaption>Figure 2: Assembled and soldered PCB board</figcaption>
+                </figure>
                 <div class="content-block-text">
-                    <h2>Additional Information</h2>
-                    <p>Continue sharing details about your project with alternating layout.</p>
+                    <p>I sourced and verified all required components through Digi-Key and Mouser, 
+                        assembled and soldered the full board, and integrated it into the shim amplifier for testing and use.</p>
+                    <p>The final PCB assembly successfully enabled seamless coil switching and improved 
+                    the overall workflow efficiency for the research team.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="project-4" class="page project-detail">
+            <a href="#all-projects" class="back-button project-link">← Back to Projects</a>
+            
+            <h1>Wifi Controlled Cleaning Robot</h1>
+            <p class="project-meta">Student Project • 2024 • Northeastern University</p>
+
+            <div class="content-block">
+                <figure class="content-block-image">
+                    <img src="robot_final.PNG" alt="Robot overview">
+                    <figcaption>Figure 1: Completed wifi-controlled cleaning robot</figcaption>
+                </figure>
+                <div class="content-block-text">
+                    <p>Designed moving robot controlled through wifi and website output from Raspberry Pi Pico.</p>
+                    <p>The robot features autonomous movement capabilities and can be directed remotely to clean designated areas, 
+                    combining mechanical design with embedded systems programming.</p>
                 </div>
             </div>
         </div>
