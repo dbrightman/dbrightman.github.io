@@ -249,6 +249,46 @@
             margin-bottom: 1.2rem;
         }
 
+        /* Skills Section */
+        .skills-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .skills-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skill-category li {
+            padding: 0.5rem 0;
+            color: #666;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+
         /* Contact */
         .contact-grid {
             display: grid;
@@ -381,7 +421,7 @@
 
                 <a href="#project-3" class="project-card project-link">
                     <div class="project-card-image">
-                        <img src="kicad_odu_connector.png" alt="Project 3">
+                        <img src="unibots_robot_front.JPG" alt="Project 3">
                     </div>
                     <h3>Unibots UK 2025 Winning Automated Robot</h3>
                     <p>Arduino-controlled competition robot using automated driving and vacuum system</p>
@@ -394,22 +434,6 @@
                     <h3>Wifi Controlled Cleaning Robot</h3>
                     <p>Designed moving robot controlled through wifi and website output from Rapsberry Pi Pico</p>
                 </a>
-
-                <!-- <a href="#project-5" class="project-card project-link">
-                    <div class="project-card-image">
-                        <img src="https://via.placeholder.com/400x300/3a3a3a/ffffff?text=Project+5" alt="Project 5">
-                    </div>
-                    <h3>Project Title Five</h3>
-                    <p>Brief description of what this project is about.</p>
-                </a>
-
-                <a href="#project-6" class="project-card project-link">
-                    <div class="project-card-image">
-                        <img src="https://via.placeholder.com/400x300/6a6a6a/ffffff?text=Project+6" alt="Project 6">
-                    </div>
-                    <h3>Project Title Six</h3>
-                    <p>Brief description of what this project is about.</p>
-                </a> -->
             </div>
         </div>
 
@@ -492,7 +516,8 @@
                             <li>Iterative design process</li>
                         </ul>
                     </div>
-                </div>            
+                </div>
+            </div>
         </div>
 
         <div id="project-2" class="page project-detail">
@@ -618,7 +643,8 @@
                             <li>Research collaboration</li>
                         </ul>
                     </div>
-                </div>            
+                </div>
+            </div>
         </div>
 
         <div id="project-3" class="page project-detail">
@@ -629,7 +655,7 @@
 
             <div class="content-block">
                 <figure class="content-block-image">
-                    <img src="unibots_robot_front.JPG" alt="KiCad design">
+                    <img src="unibots_robot_front.JPG" alt="Robot Front">
                     <figcaption>Figure 1: Automated Robot Front</figcaption>
                 </figure>
                 <div class="content-block-text">
@@ -643,7 +669,7 @@
 
             <div class="content-block reverse">
                 <figure class="content-block-image">
-                    <img src="unibots_robot_top.png" alt="Assembled board">
+                    <img src="unibots_robot_top.png" alt="Robot Interior">
                     <figcaption>Figure 2: Automated Robot Interior Components</figcaption>
                 </figure>
                 <div class="content-block-text">
@@ -658,17 +684,27 @@
                         collision penalties.</p>
                 </div>
             </div>
-            <div class="content-block reverse">
+
+            <div class="content-block">
                 <figure class="content-block-image">
-                    <img src="unibots_tournament.png" alt="Assembled board">
-                    <figcaption>Figure 3: Unitbots UK 2025 tournament</figcaption>
+                    <img src="unibots_tournament.png" alt="Tournament">
+                    <figcaption>Figure 3: UniBots UK 2025 tournament</figcaption>
                 </figure>
-            </div> 
+                <div class="content-block-text">
+                    <p>The tournament brought together teams from universities across the UK, showcasing innovative 
+                    designs and autonomous strategies in a competitive environment.</p>
+                </div>
+            </div>
+
             <div class="content-block reverse">
                 <figure class="content-block-image">
-                    <img src="winning_picture.JPG" alt="Assembled board">
+                    <img src="winning_picture.JPG" alt="Winning Team">
                     <figcaption>Figure 4: Northeastern London Robotics winning team picture</figcaption>
                 </figure>
+                <div class="content-block-text">
+                    <p>Our team's innovative vacuum system and reliable autonomous programming led us to victory 
+                    at the UniBots UK 2025 competition, demonstrating the effectiveness of our iterative design approach.</p>
+                </div>
             </div>
             
             <div class="skills-section">
@@ -686,9 +722,9 @@
                         <h3>Mechanical Design</h3>
                         <ul>
                             <li>Robot chassis structural design</li>
-                            <li>component mounting and layout</li>
+                            <li>Component mounting and layout</li>
                             <li>Component sourcing</li>
-                            <li>iterative prototyping</li>
+                            <li>Iterative prototyping</li>
                         </ul>
                     </div>
                     <div class="skill-category">
@@ -708,6 +744,7 @@
                         </ul>
                     </div>
                 </div>
+            </div>
         </div>
 
         <div id="project-4" class="page project-detail">
@@ -728,15 +765,15 @@
                 </div>
             </div>
     
-            <div class="content-block">
+            <div class="content-block reverse">
                 <figure class="content-block-image">
-                    <img src="wifi_pico.png" alt="Robot overview">
+                    <img src="wifi_pico.png" alt="Wifi Connection">
                     <figcaption>Figure 2: Wifi to Raspberry Pi Pico Connection</figcaption>
                 </figure>
                 <div class="content-block-text">
-                    <p>Using the Raspberry Pi Pico’s ability to create its own WiFi network, 
+                    <p>Using the Raspberry Pi Pico's ability to create its own WiFi network, 
                         I wrote code that hosted a local website directly from the Pico.</p>
-                        <p>Any device connected to the Pico’s network could open the site and 
+                        <p>Any device connected to the Pico's network could open the site and 
                         control the robot through a safe, direct connection. 
                         This setup kept everything local, password-protected, and reliable, while still being simple to connect to and use.</p>
                 </div>
@@ -744,16 +781,17 @@
 
             <div class="content-block">
                 <figure class="content-block-image">
-                    <img src="robot_menu.PNG" alt="Robot overview">
+                    <img src="robot_menu.PNG" alt="Robot GUI">
                     <figcaption>Figure 3: Near-finalized GUI for robot</figcaption>
                 </figure>
                 <div class="content-block-text">
                     <p>Using HTML and JavaScript, I built a GUI that acted as a clean
-                         control panel for the robot’s movement and arm functions. </p>
+                         control panel for the robot's movement and arm functions.</p>
                           <p>The layout was designed for quick, direct input, and through iterative testing
-                           I refined the controls to be consistent, responsive, and easy to operate. </p>
+                           I refined the controls to be consistent, responsive, and easy to operate.</p>
                 </div>
             </div>
+
             <div class="skills-section">
                 <h2>Skills Utilized/Learned</h2>
                 <div class="skills-grid">
@@ -774,7 +812,7 @@
                         </ul>
                     </div>
                 </div>
-
+            </div>
         </div>
 
         <!-- ABOUT PAGE -->
