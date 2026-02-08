@@ -374,6 +374,15 @@
         <div id="home" class="page active">
             <h2 style="margin-bottom: 2rem; font-size: 2rem;">Featured Projects</h2>
             <div class="projects-grid">
+
+                <a href="#project-5" class="project-card project-link">
+                    <div class="project-card-image">
+                        <img src="cartesian_robot_2.JPG" alt="Project 5">
+                    </div>
+                    <h3>Low-Field MRI Field-Mapping Robot Interface</h3>
+                    <p>Designed and built a robot GUI interface for low-field MRI field mapping research</p>
+                </a>
+
                 <a href="#project-1" class="project-card project-link">
                     <div class="project-card-image">
                         <img src="braces_phantom_overview.png" alt="Project 1">
@@ -399,13 +408,13 @@
                     <p>Arduino-controlled competition robot using automated driving and vacuum system</p>
                 </a>
 
-                <a href="#project-4" class="project-card project-link">
+                <!-- <a href="#project-4" class="project-card project-link">
                     <div class="project-card-image">
                         <img src="robot_final.PNG" alt="Project 4">
                     </div>
                     <h3>Wifi Controlled Cleaning Robot</h3>
                     <p>Designed moving robot controlled through wifi and website output from Rapsberry Pi Pico</p>
-                </a>
+                </a> -->
             </div>
         </div>
 
@@ -413,6 +422,15 @@
         <div id="all-projects" class="page">
             <h2 style="margin-bottom: 2rem; font-size: 2rem;">All Projects</h2>
             <div class="projects-grid">
+
+                <a href="#project-5" class="project-card project-link">
+                    <div class="project-card-image">
+                        <img src="cartesian_robot_2.JPG" alt="Project 5">
+                    </div>
+                    <h3>Low-Field MRI Field-Mapping Robot Interface</h3>
+                    <p>Designed and built a robot GUI interface for low-field MRI field mapping research</p>
+                </a>
+
                 <a href="#project-1" class="project-card project-link">
                     <div class="project-card-image">
                         <img src="braces_phantom_overview.png" alt="Project 1">
@@ -448,6 +466,93 @@
         </div>
 
         <!-- INDIVIDUAL PROJECT PAGES -->
+        <div id="project-5" class="page project-detail">
+            <a href="#all-projects" class="back-button project-link">← Back to Projects</a>
+            
+            <h1>Low-Field MRI Field-Mapping Robot Interface</h1>
+            <p class="project-meta">Research Engineer • 2025 • The Martinso Center - Mass General Brigham</p>
+
+            <div class="content-block">
+                <figure class="content-block-image">
+                    <img src="cartesian_robot_2.png" alt="Robot overview">
+                    <figcaption>Figure 1: Cartesian Robot with CAD additions</figcaption>
+                </figure>
+                <div class="content-block-text">
+                    <p>This project focused on improving a low-field MRI system that uses a 3D 
+                        Cartesian robot to move a small magnetic field sensor from point 
+                        to point for field mapping. </p>
+                         <p>The robot follows a path set by a CSV
+                         file, and a GUI is used to set the initial position and control
+                         the scan. The goal was to make the overall process more stable, 
+                         easier to run, and more useful for repeated research testing.</p>
+                </div>
+            </div>
+    
+            <div class="content-block reverse">
+                <figure class="content-block-image">
+                    <img src="GUI_2.png" alt="Wifi Connection">
+                    <figcaption>Figure 2: Wifi to Raspberry Pi Pico Connection</figcaption>
+                </figure>
+                <div class="content-block-text">
+                    <p>I edited the existing Python
+                         GUI to make the system easier to 
+                         operate during long scans. </p>
+
+                         <p> I added a progress bar at the bottom 
+                        to show how much of the run was 
+                        completed and how much was left. 
+                        I also added a “keep position” option so
+                        the sensor could stay aligned at the center
+                        of the MRI without having to reconfigure the 
+                        initial position every time. Finally, 
+                        I implemented a pause feature so the
+                        robot could be stopped mid-run and 
+                         continued later, which wasn't possible before.
+                </div>
+            </div>
+
+            <div class="content-block">
+                <figure class="content-block-image">
+                    <img src="cartesian_robot_baseplate_cad.png" alt="Robot GUI">
+                    <figcaption>Figure 3: CAD of the baseplate for the robot</figcaption>
+                </figure>
+                <figure class="content-block-image">
+                    <img src="cartesian_robot_holder_cad.png" alt="Robot GUI">
+                    <figcaption>Figure 4: CAD of the holder for the robot</figcaption>
+                </figure>
+                <div class="content-block-text">
+                    <p>On the hardware side, I designed CAD parts that
+                        improved how the sensor assembly and robot base were supported.
+                        I made mounts to hold the metal bar that positions the magnetic
+                        field sensor inside the MRI, keeping alignment consistent during motion. </p>
+                        <p>I also designed base hold-down parts to stabilize the robot and 
+                        reduce vibration and noise while it was running, which helped
+                        improve both the sound level and overall performance.</p>
+                </div>
+            </div>
+
+            <div class="skills-section">
+                <h2>Skills Utilized/Learned</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programming</h3>
+                        <ul>
+                            <li>Python Programming</li>
+                            <li>GUI Development</li>
+                            <li>System Integration</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Hardware</h3>
+                        <ul>
+                            <li>Specified CAD Design</li>
+                            <li>Performance optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="project-1" class="page project-detail">
             <a href="#all-projects" class="back-button project-link">← Back to Projects</a>
             
